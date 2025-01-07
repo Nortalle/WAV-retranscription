@@ -1,0 +1,30 @@
+## Linux
+
+# Temporary files
+*~
+
+## macOS
+
+# Files created by macOS Finder
+.DS_Store
+
+## Windows
+
+# Windows thumbnail cache files
+Thumbs.db
+
+# Folder config file
+[Dd]esktop.ini
+
+# input files
+*.wav
+*.ogx
+
+# output files
+*.txt
+
+# R Speech rocognition model
+*.bin
+
+# R library
+core
