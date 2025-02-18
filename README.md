@@ -3,5 +3,11 @@
 ## Préparer un fichier WAV
 
 ```bash
-ffmpeg -i input.m4a -acodec pcm_s16le -ac 1 -ar 16000 output.wav
+ffmpeg -i input.wmv -ar 16000 -ac 1 -c:a pcm_s16le output.wav
+```
+
+Séparer un fichier WAV en plusieurs fichiers de 30 minutes
+
+```bash
+ffmpeg -i 2025-01-09-whatsapp-long.wav -f segment -segment_time 1800 -c copy output%03d.wav
 ```

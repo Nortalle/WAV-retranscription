@@ -19,6 +19,7 @@ Thumbs.db
 # input files
 *.wav
 *.ogx
+*.m4a
 
 # output files
 *.txt

@@ -3,7 +3,8 @@
 	"image": "ghcr.io/rocker-org/devcontainer/geospatial:4.4",
 	"features": {
 		"ghcr.io/rocker-org/devcontainer-features/r-history:0": {},
-		"ghcr.io/devcontainers/features/python:1": {}
+		"ghcr.io/devcontainers/features/python:1": {},
+		"ghcr.io/devcontainers-extra/features/ffmpeg-apt-get:1": {}
 	},
 	"customizations": {
 		"vscode": {
