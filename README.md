@@ -11,3 +11,5 @@ Séparer un fichier WAV en plusieurs fichiers de 30 minutes
 ```bash
 ffmpeg -i 2025-01-09-whatsapp-long.wav -f segment -segment_time 1800 -c copy output%03d.wav
 ```
+
+Ne pas oublier d'utiliser https://otranscribe.com/ pour parcouir les fichiers WAV et les corriger
