@@ -13,3 +13,5 @@ ffmpeg -i 2025-01-09-whatsapp-long.wav -f segment -segment_time 1800 -c copy out
 ```
 
 Ne pas oublier d'utiliser https://otranscribe.com/ pour parcouir les fichiers WAV et les corriger
+
+Pour lancer le `script.R`, l'interface de VS code montre un bouton "play" normallement
