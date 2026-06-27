@@ -20,6 +20,8 @@ Thumbs.db
 *.wav
 *.ogx
 *.m4a
+*.ogg
+*.webm
 
 # output files
 *.txt
@@ -29,3 +31,5 @@ Thumbs.db
 
 # R library
 core
+
+/tmp

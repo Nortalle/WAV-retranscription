@@ -3,8 +3,7 @@
 	"image": "ghcr.io/rocker-org/devcontainer/geospatial:4.4",
 	"features": {
 		"ghcr.io/rocker-org/devcontainer-features/r-history:0": {},
-		"ghcr.io/devcontainers/features/python:1": {},
-		"ghcr.io/devcontainers-extra/features/ffmpeg-apt-get:1": {}
+		"ghcr.io/devcontainers/features/python:1": {}
 	},
 	"customizations": {
 		"vscode": {
@@ -26,5 +25,7 @@
 	// Map the user's SSH directory to the container for SSH signing
 	"mounts": [
 		"type=bind,source=${localEnv:HOME}/.ssh,target=${localEnv:HOME}/.ssh,type=bind,consistency=cached"
-	]
+	],
+	// Expose the AMD GPU (DRI devices) for Vulkan acceleration
+	"runArgs": ["--device=/dev/dri", "--group-add=video"]
 }
