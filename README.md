@@ -104,6 +104,35 @@ with open('output/2026-06-27-prenom.txt', 'w') as f:
 "
 ```
 
+## Transcrire avec ffmpeg (filtre whisper natif, GPU Vulkan)
+
+Grâce à la reconstruction de ffmpeg avec `--enable-whisper` effectuée par `post-create.sh`, le filtre `whisper` est disponible directement dans ffmpeg. Il réutilise la même bibliothèque `whisper.cpp` et les mêmes modèles GGML que le pipeline R, avec accélération GPU Vulkan.
+
+Télécharger un modèle GGML si besoin (le `ggml-large-v2.bin` du pipeline R est déjà utilisable) :
+
+```bash
+bash /opt/whisper.cpp/models/download-ggml-model.sh small
+# → ggml-small.bin téléchargé dans le répertoire courant
+```
+
+Transcrire un fichier audio vers un fichier texte :
+
+```bash
+ffmpeg -i "MonFichier.ogg" \
+  -af "whisper=model=ggml-small.bin:language=fr:destination=output/2026-06-27-prenom.txt:format=text" \
+  -f null -
+```
+
+Générer des sous-titres SRT :
+
+```bash
+ffmpeg -i "MonFichier.ogg" \
+  -af "whisper=model=ggml-large-v2.bin:language=fr:destination=output/2026-06-27-prenom.srt:format=srt" \
+  -f null -
+```
+
+Options du filtre : `model` (chemin du modèle GGML), `language` (`fr`, `en`, `auto`…), `destination` (fichier ou `-` pour stdout), `format` (`text`, `srt`, `json`).
+
 ## Structure du projet
 
 ```
